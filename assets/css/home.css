@@ -1,0 +1,158 @@
+body{
+    margin: 20px;
+    padding: 0;
+    font-family: sans-serif;
+    background-color: rgb(172, 162, 162);
+}
+h1{
+    text-align: center;
+}
+#container{
+    width: 60vw;
+    min-height: 80vh;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    margin: auto;
+    border-radius: 4px;
+
+}
+#form-container label{
+    font-size: 0.9rem;
+}
+#category-div{
+    display: flex;
+    flex-direction: row;
+
+}
+.input-box-1{
+    background: none;
+    display: flex;
+    flex-direction: column;
+    padding: 0.8rem 1rem 1rem 1rem;
+    border-width: 1px 0px 1px 0px;
+    border-style: solid;
+    border-color: rgb(203, 200, 200);
+
+}
+.input-box-1 input{
+    border: none;
+    height: 2rem;
+    outline: none;
+}
+/* #description{
+    border: none;
+} */
+.input-box-2{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 0.8rem 0.8rem 1rem 1rem;
+    border-width: 0px 1px 0px 0px;
+    border-style: solid;
+    border-color: rgb(203, 200, 200);
+}
+.input-box-2 input{
+    border: none;
+    height: 2rem;
+    outline: none;
+}
+.input-box-2 select{
+    border: none;
+    height: 2rem;
+    outline: none;
+}
+#button-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-width: 1px 0px 1px 0px;
+    border-style: solid;
+    border-color: rgb(203, 200, 200);
+    padding: 1.5rem 1rem 1.5rem 1rem;
+    
+
+}
+#button-div button{
+    width: 9rem;
+    margin: 0px 5px 0px 5px;
+    padding: 15px 10px;
+}
+#button-div button i{
+    font-size: 1rem;
+    margin-right: 7px;
+}
+#add-task{
+    border: none;
+    background-color: gray;
+    color: white;
+    font-weight: 600;
+    
+}
+#delete-task{
+    border: none;
+    background-color: red;
+    color: white;
+    font-weight: 600;
+}
+
+
+
+/* TASK CARD*/
+.task{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-width: 0px 0px 1px 0px;
+    border-style: solid;
+    border-color: rgb(203, 200, 200);
+    
+}
+.task-1{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+    padding: 1.5rem 1rem 1.5rem 1rem;
+}
+
+.check-div{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+.check-div input{
+    width: 1.2rem;
+    height: 1.2rem;
+}
+.desc-div{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding-left: 0.8rem;
+
+}
+.desc-div span{
+    font-size: 0.8rem;
+    margin-bottom: 4px;
+}
+.show-date{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    color: rgb(147, 146, 146);
+    
+}
+.show-date span{
+    font-size: 0.7rem;
+}
+.show-date i{
+    padding-right: 0.7rem;
+    font-size: 1rem;
+}
+.ctg{
+    border: none;
+    padding: 0.5rem 1rem;
+    background-color: rgb(233, 188, 11);
+}

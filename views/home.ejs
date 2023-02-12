@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+    <link
+      rel="stylesheet"
+      href="https://kit.fontawesome.com/4b6a76a9eb.css"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/home.css" />
+  </head>
+  <body>
+    <div id="container">
+      <h1><%= title %></h1>
+      <form action="" id="form-container">
+        <div class="input-box-1">
+          <label for="description">DESCRIPTION</label>
+          <input
+            type="text"
+            id="description"
+            name="description"
+            placeholder="What do you need to do?"
+          />
+        </div>
+        <div id="category-div">
+          <div class="input-box-2">
+            <label for="category">CATEGORY</label>
+            <select name="Choose a category" id="category">
+              <option value="Choose a category">Choose a category</option>
+              <option value="Personal">Personal</option>
+              <option value="Work">Work</option>
+              <option value="School">School</option>
+              <option value="Cleaning">Cleaning</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="input-box-2">
+            <label for="due-date">DUE DATE</label>
+            <input type="date" id="due-date" name="due-date" />
+          </div>
+        </div>
+        <div id="button-div">
+          <button type="submit" id="add-task">
+            <i class="fa-sharp fa-solid fa-plus"></i>ADD TASK
+          </button>
+          <button id="delete-task">
+            <i class="fa-solid fa-trash-can"></i>DELETE TASKS
+          </button>
+        </div>
+        <div class="task">
+          <div class="task-1">
+            <div class="check-div">
+              <input type="checkbox" id="check" name="check" value="false" />
+              <div class="desc-div">
+                <span>Why not add a task?</span>
+                <div class="show-date">
+                    <i class="fa-regular fa-calendar-days"></i>
+                  <span>MAY 2,2019</span>
+                </div>
+              </div>
+            </div>
+            <span class="ctg">SCHOOL</span>
+          </div>
+        </div>
+      </form>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/4b6a76a9eb.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

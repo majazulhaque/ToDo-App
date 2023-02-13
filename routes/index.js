@@ -5,8 +5,8 @@ const router = express.Router();
 const homeController = require('../controllers/home_controller');
 
 router.get('/',homeController.home);
-// router.post('/create-list', homeController.create);
-// router.post('/delete-list/', homeController.deleteTodo);
+router.post('/create-list', homeController.create);
+router.post('/delete-list', homeController.deleteTodo);
 
 
 

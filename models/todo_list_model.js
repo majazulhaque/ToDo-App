@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+// Create a Schema to define the datatype of each field.
 const todoSchema = new mongoose.Schema({
     description: {
         type: String,

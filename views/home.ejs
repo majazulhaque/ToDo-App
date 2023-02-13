@@ -14,14 +14,15 @@
   </head>
   <body>
     <div id="container">
+      <!--Header content having TODO icon and Name-->
       <div id="header">
         <img
               src="/image/googlekeep.png"
               alt=""
             />
-        <h1><%= title %></h1>
+        <h1 id="heade"></h1>
       </div>
-      
+      <!-- Form to fill the required info related to the list-->
       <form action="/create-list" method="POST" id="form-container">
         <div class="input-box-1">
           <label for="description">DESCRIPTION</label>
@@ -38,11 +39,11 @@
             <label for="category">CATEGORY</label>
             <select name="category" id="category">
               <option value="" disabled selected>Choose a category</option>
-              <option value="Personal">Personal</option>
-              <option value="Work">Work</option>
-              <option value="School">School</option>
-              <option value="Cleaning">Cleaning</option>
-              <option value="Other">Other</option>
+              <option value="PERSONAL">PERSONAL</option>
+              <option value="WORK">WORK</option>
+              <option value="SCHOOL">SCHOOL</option>
+              <option value="CLEANING">CLEANING</option>
+              <option value="OTHER">OTHER</option>
             </select>
           </div>
           <div class="input-box-2">
@@ -80,9 +81,11 @@
                   <span class="dispdsc"><%=i.description%></span>
                   <div class="show-date">
                     <i class="fa-regular fa-calendar-days"></i>
+                    <!-- Find the appropiate Date,Month,Year from i._dueDate-->
                     <% var date = new Date(i.dueDate)%> <% var d =
                     date.getDate()%> <% var month = date.getMonth()+1 %> <% var
                     year = date.getFullYear() %> <%var m = parseInt(month)%>
+                    <!-- Create arr for mapping the Month name with Month number-->
                     <%var arr =
                     ["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"]%>
 
@@ -99,16 +102,18 @@
         </ul>
       </div>
     </div>
+    <!--Adding fontAwesome js to show the icon-->
     <script
       src="https://kit.fontawesome.com/4b6a76a9eb.js"
       crossorigin="anonymous"
     ></script>
-    <!-- <script src="/jquery-3.6.3.js"></script> -->
+    <!--Adding jquery to run the Ajax-->
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
       crossorigin="anonymous"
     ></script>
+    <!--Add sweetalert to show the beautiful alert-->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="/js/home.js"></script>
   </body>

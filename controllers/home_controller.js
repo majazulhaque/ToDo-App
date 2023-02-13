@@ -1,4 +1,6 @@
 const ToDo = require("../models/todo_list_model");
+
+// Method to render the data from database into the view.
 module.exports.home = function (req, res) {
   ToDo.find({}, function (err, todos) {
     if (err) {
@@ -10,16 +12,32 @@ module.exports.home = function (req, res) {
       todo_list: todos,
     });
   });
-  // return res.render('home',{
-  //     title: "ToDo App",
-  //     todo_list: ToDo,
-  // });
 };
 
 
+// Method to add the todo list in the database***************
+module.exports.create = function (req, res) {
+    ToDo.create(
+      {
+        description: req.body.description,
+        category: req.body.category,
+        dueDate: req.body.dueDate,
+      },
+      function (err, newList) {
+        if (err) {
+          console.log(newList);
+          console.log("error while creating a contact!");
+          return;
+        }
+        // console.log("***********", newList);
+        return res.redirect("back");
+      }
+    );
+  };
+
+//Method to delete the Todo list from database*************
 module.exports.deleteTodo = function (req, res) {
-  console.log("help");
-  sp = req.query.id; // getting the id from ui
+  sp = req.query._id; // getting the id from url
   newsp = sp.split(",");
   for (let i = 0; i < newsp.length; i++) {
     // looping over newsp  to delete all the checked value

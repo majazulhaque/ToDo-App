@@ -4,7 +4,10 @@ const router = express.Router();
 
 const homeController = require('../controllers/home_controller');
 
-router.use('/',homeController.home);
+router.get('/',homeController.home);
+// router.post('/create-list', homeController.create);
+// router.post('/delete-list/', homeController.deleteTodo);
+
 
 
 module.exports = router;

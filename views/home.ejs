@@ -14,8 +14,15 @@
   </head>
   <body>
     <div id="container">
-      <h1><%= title %></h1>
-      <form action="" id="form-container">
+      <div id="header">
+        <img
+              src="/image/googlekeep.png"
+              alt=""
+            />
+        <h1><%= title %></h1>
+      </div>
+      
+      <form action="/create-list" method="POST" id="form-container">
         <div class="input-box-1">
           <label for="description">DESCRIPTION</label>
           <input
@@ -23,13 +30,14 @@
             id="description"
             name="description"
             placeholder="What do you need to do?"
+            required
           />
         </div>
         <div id="category-div">
           <div class="input-box-2">
             <label for="category">CATEGORY</label>
-            <select name="Choose a category" id="category">
-              <option value="Choose a category">Choose a category</option>
+            <select name="category" id="category">
+              <option value="" disabled selected>Choose a category</option>
               <option value="Personal">Personal</option>
               <option value="Work">Work</option>
               <option value="School">School</option>
@@ -39,37 +47,69 @@
           </div>
           <div class="input-box-2">
             <label for="due-date">DUE DATE</label>
-            <input type="date" id="due-date" name="due-date" />
+            <input type="date" id="due-date" name="dueDate" required />
           </div>
         </div>
         <div id="button-div">
           <button type="submit" id="add-task">
             <i class="fa-sharp fa-solid fa-plus"></i>ADD TASK
           </button>
-          <button id="delete-task">
+          <button type="submit" id="delete-task">
             <i class="fa-solid fa-trash-can"></i>DELETE TASKS
           </button>
         </div>
-        <div class="task">
-          <div class="task-1">
-            <div class="check-div">
-              <input type="checkbox" id="check" name="check" value="false" />
-              <div class="desc-div">
-                <span>Why not add a task?</span>
-                <div class="show-date">
+      </form>
+      <!-- for display ToDo Lists-->
+      <div class="task">
+        <ul>
+          <% for(let i of todo_list){ %>
+          <li>
+            <div class="task-1">
+              <div class="check-div">
+                <input
+                  type="checkbox"
+                  class="delecheck"
+                  name="delecheck"
+                  onclick="checkedOrNot()"
+                  uid=<%=
+                  i._id
+                  %>
+                />
+
+                <div class="desc-div">
+                  <span class="dispdsc"><%=i.description%></span>
+                  <div class="show-date">
                     <i class="fa-regular fa-calendar-days"></i>
-                  <span>MAY 2,2019</span>
+                    <% var date = new Date(i.dueDate)%> <% var d =
+                    date.getDate()%> <% var month = date.getMonth()+1 %> <% var
+                    year = date.getFullYear() %> <%var m = parseInt(month)%>
+                    <%var arr =
+                    ["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"]%>
+
+                    <span class="dueDt"
+                      ><%= arr[m-1]%> <%= d %>,<%= year %></span
+                    >
+                  </div>
                 </div>
               </div>
+              <div class="ctg"><%=i.category%></div>
             </div>
-            <span class="ctg">SCHOOL</span>
-          </div>
-        </div>
-      </form>
+          </li>
+          <%}%>
+        </ul>
+      </div>
     </div>
     <script
       src="https://kit.fontawesome.com/4b6a76a9eb.js"
       crossorigin="anonymous"
     ></script>
+    <!-- <script src="/jquery-3.6.3.js"></script> -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="/js/home.js"></script>
   </body>
 </html>
